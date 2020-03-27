@@ -20,15 +20,14 @@ export default function NewIncident() {
       value
     };
     try {
-      // await api.post('
-      console.log(data);
-      //   headers: {
-      //     Authorization: ongId
-      //   }
-      // });
-      // hystory.push('/profile');
+      await api.post('incidents', data, {
+        headers: {
+          authorization: ongId
+        }
+      });
+      hystory.push('/profile');
     } catch (error) {
-      alert('Erro ao cadastrar o caso tente novamente');
+      alert('Erro ao cadastrar caso, tente novamente!' + error);
     }
   }
 
@@ -49,20 +48,19 @@ export default function NewIncident() {
         </section>
         <form onSubmit={handleNewIncident}>
           <input
-            type="text"
             placeholder="Título do caso"
             value={title}
-            onChange={e => setTitle(e.target.valeu)}
+            onChange={e => setTitle(e.target.value)}
           />
           <textarea
             placeholder="Descrição"
             value={description}
-            onChange={e => setDescription(e.target.valeu)}
+            onChange={e => setDescription(e.target.value)}
           />
           <input
             placeholder="Valor em reais"
             value={value}
-            onChange={e => setValue(e.target.valeu)}
+            onChange={e => setValue(e.target.value)}
           />
           <button type="submit" className="button">
             Cadastrar

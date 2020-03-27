@@ -23,6 +23,7 @@ export default function Register() {
       city,
       uf
     };
+    console.log(data);
 
     try {
       const response = await api.post('ongs', data);
