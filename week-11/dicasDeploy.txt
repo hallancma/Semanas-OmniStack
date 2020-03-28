@@ -1,0 +1,9 @@
+para node em teste usar:
+ - Heroku
+para node de forma profissinal
+- Digital Ocean
+app com maior escala
+
+
+para React:
+ - Netlify
